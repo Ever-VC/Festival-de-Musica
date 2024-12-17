@@ -1,0 +1,27 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "Aprendiendo SASS y NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ever-VC/Festival-de-Musica.git"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp"
+  ],
+  "author": "Ever-VC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ever-VC/Festival-de-Musica/issues"
+  },
+  "homepage": "https://github.com/Ever-VC/Festival-de-Musica#readme",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}
