@@ -6,7 +6,7 @@ const sass = gulpSass(dartSass);
 
 export function css(done) {
     return src('src/scss/app.scss')
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(dest('build/css'));
     done();
 }
