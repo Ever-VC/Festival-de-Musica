@@ -2,9 +2,11 @@
   "name": "festivalmusica",
   "version": "1.0.0",
   "description": "Aprendiendo SASS y NPM",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss:build/css"
+    "sass": "sass --watch src/scss:build/css",
+    "compile-sass": "gulp css_watch"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
   },
   "homepage": "https://github.com/Ever-VC/Festival-de-Musica#readme",
   "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.0",
     "sass": "^1.83.0"
   }
 }
