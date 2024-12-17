@@ -1,0 +1,2 @@
+# Ignora las carpetas y archivos que no se deben subir al repositorio
+node_modules/
