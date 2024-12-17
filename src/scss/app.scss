@@ -1,5 +1,5 @@
 @use 'base/variables' as v;
-@use 'base/normalize';
+@forward 'base/normalize';
 
 body {
     font-family: v.$fuente_principal;
