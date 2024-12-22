@@ -18,7 +18,8 @@ export function css(done) {
 }
 
 export function css_watch() {
-    return watch('src/scss/**/*.scss', css);
+    watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', js);
 }
 
 // -> Ejecuta las tareas js, css y css_watch en serie (una tras otra)
