@@ -12,7 +12,9 @@ export function js(done) {
 
 export function css(done) {
     return src('src/scss/app.scss', { sourcemaps: true })
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass({
+            outputStyle: 'compressed',
+        }).on('error', sass.logError))
         .pipe(dest('build/css', { sourcemaps: '.' }));
     done();
 }
