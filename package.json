@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Ever-VC/Festival-de-Musica#readme",
   "devDependencies": {
+    "glob": "^11.0.0",
     "gulp": "^5.0.0",
     "gulp-sass": "^6.0.0",
     "gulp-terser": "^2.1.0",
