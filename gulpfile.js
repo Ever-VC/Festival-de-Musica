@@ -4,8 +4,11 @@ import gulpSass from 'gulp-sass';
 
 const sass = gulpSass(dartSass);
 
+import terser from 'gulp-terser';
+
 export function js(done) {
     return src('src/js/app.js')
+        .pipe(terser())
         .pipe(dest('build/js'));
     done();
 }
