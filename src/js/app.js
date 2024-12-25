@@ -30,6 +30,9 @@ function crearGaleria() {
     for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
         // Crear imagen
         const imagen = document.createElement('IMG');
+        imagen.width = 300;
+        imagen.height = 200;
+        imagen.loading = 'lazy';
         imagen.src = `${URL_IMAGENES}${i}.jpg`;
         imagen.alt = 'Imagen Galeria';
 
