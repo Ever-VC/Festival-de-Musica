@@ -29,16 +29,16 @@ function crearGaleria() {
     const URL_IMAGENES = 'src/img/gallery/thumb/';
     for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
         // Crear imagen
-        const imagen = document.createElement('IMG');
-        imagen.width = 300;
-        imagen.height = 200;
-        imagen.loading = 'lazy';
-        imagen.src = `${URL_IMAGENES}${i}.jpg`;
-        imagen.alt = 'Imagen Galeria';
+        const imagen = document.createElement('PICTURE');
+        imagen.innerHTML = `
+            <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+            <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+        `;
 
         // Agregar evento click a la imagen (Event Handler) para mostrar la imagen en el modal
         imagen.onclick = function() {
-            mostrarImagen(imagen);
+            mostrarImagen(i);
         }
 
         // Agregar imagen a la galeria
@@ -46,7 +46,7 @@ function crearGaleria() {
     }
 }
 
-function mostrarImagen(imagen) {
+function mostrarImagen(id) {
     // Crear modal
     const modal = document.createElement('DIV');
     modal.classList.add('modal');
@@ -61,12 +61,15 @@ function mostrarImagen(imagen) {
     btnCerrar.onclick = cerrarModal;
 
     // Crear imagen en el modal
-    const imagenModal = document.createElement('IMG');
-    imagenModal.src = imagen.src.replace('thumb', 'full');
-    imagenModal.alt = imagen.alt;
+    const imagen = document.createElement('PICTURE');
+    imagen.innerHTML = `
+        <source srcset="build/img/gallery/full/${id}.avif" type="image/avif">
+        <source srcset="build/img/gallery/full/${id}.webp" type="image/webp">
+        <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${id}.jpg" alt="imagen galeria">
+    `;
 
     // Agregar imagen al modal
-    modal.appendChild(imagenModal);
+    modal.appendChild(imagen);
 
     // Agregar boton al modal
     modal.appendChild(btnCerrar);
