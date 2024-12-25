@@ -26,7 +26,7 @@ function crearGaleria() {
 
     // Crear 16 imagenes y agregarlas a la galeria
     const CANTIDAD_IMAGENES = 16;
-    const URL_IMAGENES = 'src/img/gallery/full/';
+    const URL_IMAGENES = 'src/img/gallery/thumb/';
     for(let i = 1; i <= CANTIDAD_IMAGENES; i++) {
         // Crear imagen
         const imagen = document.createElement('IMG');
@@ -62,7 +62,7 @@ function mostrarImagen(imagen) {
 
     // Crear imagen en el modal
     const imagenModal = document.createElement('IMG');
-    imagenModal.src = imagen.src;
+    imagenModal.src = imagen.src.replace('thumb', 'full');
     imagenModal.alt = imagen.alt;
 
     // Agregar imagen al modal
